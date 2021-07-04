@@ -1,0 +1,133 @@
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+@mixin bg-image($url) {
+    background-image: url($url+"@2x.png");
+    @media (-webkit-min-device-pixel-ratio:3), (min-device-pixel-ratio:3) {
+        background-image: url($url+"@3x.png");
+    }
+}
+@mixin no-wrap {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+@mixin border-radius($value, $direction:all) {
+    @if $direction==all {
+        border-radius: $value;
+    }
+    @else if $direction==upleft {
+        border-top-left-radius: $value;
+    }
+    @else if $direction==upright {
+        border-top-right-radius: $value;
+    }
+    @else if $direction==downleft {
+        border-bottom-left-radius: $value;
+    }
+    @else if $direction==downright {
+        border-bottom-right-radius: $value;
+    }
+    @else if $direction==upall {
+        border-top-left-radius: $value;
+        border-top-right-radius: $value;
+    }
+    @else if $direction==downall {
+        border-bottom-left-radius: $value;
+        border-bottom-right-radius: $value;
+    }
+}
+
+/**
+ * @description:1像素边框
+ * @param {$color} 颜色
+ * @param {$left} 左边距离 默认为0
+ * @param {$direction} 上边框 下边框 默认down
+ * @return {1px边框}
+ */
+@mixin border-1px($color, $left:0, $direction:down) {
+    position: relative;
+    @if $direction==up {
+        &::before {
+            content: ' ';
+            display: block;
+            position: absolute;
+            left: $left;
+            top: 0;
+            width: 100%;
+            border-bottom: 1px solid $color;
+        }
+    }
+    @else if $direction==down {
+        &::after {
+            content: ' ';
+            display: block;
+            position: absolute;
+            left: $left;
+            bottom: 0;
+            width: 100%;
+            border-top: 1px solid $color;
+        }
+    }
+}
+
+/**
+ * @description:去除边框
+ */
+@mixin border-none {
+    &::after,
+    &::before {
+        display: none;
+    }
+}
+
+/**
+ * @description:三角样式
+ * @param {$width} 宽度
+ * @param {$height} 高度
+ * @param {$color} 颜色
+ * @param {$direction} 方向 上 右 下 左
+ * @return {三角}
+ */
+@mixin triangle($width, $height, $color, $direction) {
+    $width: $width / 2;
+    $color-border-style: $height solid $color;
+    $transparent-border-style: $width solid transparent;
+    height: 0;
+    width: 0;
+    @if $direction==up {
+        border-bottom: $color-border-style;
+        border-left: $transparent-border-style;
+        border-right: $transparent-border-style;
+    }
+    @else if $direction==right {
+        border-left: $color-border-style;
+        border-top: $transparent-border-style;
+        border-bottom: $transparent-border-style;
+    }
+    @else if $direction==down {
+        border-top: $color-border-style;
+        border-left: $transparent-border-style;
+        border-right: $transparent-border-style;
+    }
+    @else if $direction==left {
+        border-right: $color-border-style;
+        border-top: $transparent-border-style;
+        border-bottom: $transparent-border-style;
+    }
+}
+@mixin extend-click() {
+    position: relative;
+    &::before {
+        content: " ";
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+    }
+}

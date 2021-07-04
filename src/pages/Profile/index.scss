@@ -1,0 +1,45 @@
+.profile_wrap{
+    .profile_top{
+        height: 180px;
+        .profile_info{
+            height: inherit;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            img{
+                width: 80px;
+            }
+            p{
+                color:#fff;
+                font-size: 13px;
+                margin-top: 15px;
+            }
+        }
+    }
+    .profile_mid{
+        color: #000;
+        font-size: 14px;
+        .am-list-extra{
+            font-size: 13px;
+        }
+        .profile_main{
+            display: flex;
+            padding: 20px 15px;
+            justify-content: space-around;
+            .profile_list{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                .iconfont{
+                    font-size: 30px;
+                    margin-bottom: 8px;
+                }
+            }
+        }
+
+    }
+    .am-list-item .am-list-line .am-list-content{
+        font-size: 15px;
+    }
+}

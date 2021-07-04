@@ -1,0 +1,39 @@
+.searchgoods_wrap{
+    padding: 20px 13px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .goods_list{
+        width: 48%;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        padding-bottom: 10px;
+        box-shadow: 0 0 4px 2px #f1f1f1;
+        img {
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+        p.describe {
+            color: #666;
+            font-size: 13px;
+            margin: 10px 0;
+            padding:0 13px;
+            word-break: break-all;
+            text-align: justify;
+            text-justify:newspaper;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-height: 18px;
+            -webkit-box-orient: vertical;
+        }
+        span.price {
+            color: red;
+            font-size: 15px;
+            padding:0 13px;
+        }
+    }
+}
