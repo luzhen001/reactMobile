@@ -1,0 +1,33 @@
+.search_wrap {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    background-color: #108ee9;
+    justify-content: space-between;
+    :global(.am-icon-left){
+        width: 28px;
+        height: 28px;
+        padding-left: 5px;
+    }
+    :global(.am-search){
+        height: 35px;
+        flex: 1!important;
+        background-color: unset;
+        :global(.am-search-input){
+            height: inherit;
+            :global(.am-search-synthetic-ph){
+                line-height: 35px;
+            }
+            :global(input){
+                height: inherit;
+            }
+        }
+        :global(.am-search-synthetic-ph){
+            height: inherit;
+        }
+        :global(.am-search-cancel){
+            color: #fff;
+            font-size: 13px;
+        }
+    }
+}

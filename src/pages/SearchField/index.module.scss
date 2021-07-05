@@ -1,0 +1,15 @@
+.suggest-list {
+    padding: 0 10px;
+    li {
+        color: #666;
+        font-size: 14px;
+        padding: 15px 0;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(232, 229, 229, 0.7);
+        .right {
+            color: #666;
+            font-weight: bold;
+        }
+    }
+}

@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 2545234 */
-  src: url('iconfont.woff2?t=1625213196254') format('woff2'),
-       url('iconfont.woff?t=1625213196254') format('woff'),
-       url('iconfont.ttf?t=1625213196254') format('truetype');
+  src: url('iconfont.woff2?t=1625464793222') format('woff2'),
+       url('iconfont.woff?t=1625464793222') format('woff'),
+       url('iconfont.ttf?t=1625464793222') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,42 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-fankui:before {
+  content: "\e605";
+}
+
+.icon-gongneng:before {
+  content: "\e64c";
+}
+
+.icon-fenxiang:before {
+  content: "\e64d";
+}
+
+.icon-xiangsiti:before {
+  content: "\e62c";
+}
+
+.icon-buganxingqu:before {
+  content: "\e673";
+}
+
+.icon-dingdan:before {
+  content: "\e653";
+}
+
+.icon-shoucang:before {
+  content: "\e602";
+}
+
+.icon-dianpu:before {
+  content: "\e603";
+}
+
+.icon-kefu:before {
+  content: "\e667";
 }
 
 .icon-coupon:before {
@@ -31,10 +67,6 @@
 
 .icon-zhanghuanquan:before {
   content: "\e615";
-}
-
-.icon-suoyoudingdan:before {
-  content: "\e65c";
 }
 
 .icon-daifahuo:before {

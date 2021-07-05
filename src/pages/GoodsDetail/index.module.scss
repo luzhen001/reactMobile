@@ -1,0 +1,88 @@
+.goods_content{
+    width: 100%;
+    background: #f1f1f1;
+    height: calc(100% - 97px)!important;
+    .goods_main{
+        padding: 0 10px;
+        margin: 10px 0;
+        .goods_title{
+            padding: 10px;
+            border-radius: 10px;
+            background: #fff;
+            h3{
+                text-align: justify;
+                margin-bottom: 10px;
+                word-break: break-all;
+            }
+            p{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                span{
+                    color: #e93038;
+                    font-weight: bold;
+                }
+                em{
+                    color: #999;
+                    font-size: 13px;
+                    font-style: normal;
+                }
+            }
+        }
+    }
+}
+.goods_buy{
+    height: 52px;
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: space-between;
+    .buy_left{
+        width: 46%;
+        display: flex;
+        align-items: center;
+        padding-right: 15px;
+        justify-content: space-between;
+        .left_item{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            :global(.iconfont){
+                font-size: 20px;
+            }
+            .color_red{
+                color: #e93038;
+            }
+            span{
+                color: #666;
+                font-size: 12px;
+                margin-top: 2px;
+            }
+        }
+    }
+    .buy_right{
+        width: 54%;
+        display: flex;
+        .btn{
+            height:40px;
+            width: 130px;
+            font-size: 14px;
+            line-height: 40px;
+            border-radius: 0;
+            border:none;
+            &::before{
+                border:none;
+            }
+        }
+        .cart_btn{
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+            background-image: linear-gradient(to right, #ffcb00,70%, #ff9500);
+        }
+        .buy_btn{
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            background-image: linear-gradient(to right, #ff6524,70%, #ff0040);
+        }
+    }
+}

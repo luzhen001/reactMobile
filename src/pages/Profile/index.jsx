@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { List,} from 'antd-mobile';
-import personBg from 'assets/images/profile_bg.png'
-import personLogo from 'assets/images/profile_logo.png'
-import './index.scss'
+import personBg from 'assets/images/profile_bg.png';
+import personLogo from 'assets/images/profile_logo.png';
+import styles from './index.module.scss';
 class Profile extends Component {
     render() {
         const isLogin = localStorage.getItem("username");
         return (
-            <div className="home_wrap profile_wrap">
-                <div className="profile_top" style={{background:`url(${personBg}) no-repeat center center / cover`}}>
-                    <div className="profile_info">
+            <div className="home_wrap">
+                <div className={styles.profile_top} style={{background:`url(${personBg}) no-repeat center center / cover`}}>
+                    <div className={styles.profile_info}>
                         <img src={personLogo} alt="" />
                         {
                             isLogin?
@@ -19,20 +19,20 @@ class Profile extends Component {
                         }
                     </div>
                 </div>
-                <div className="profile_mid">
+                <div className={styles.profile_mid}>
                     <List>
                         <List.Item extra="查看全部" arrow="horizontal" onClick={() => {}}>我的订单</List.Item>
                     </List>
-                    <div className="profile_main">
-                        <div className="profile_list">
-                            <i className="iconfont icon-suoyoudingdan"></i>
+                    <div className={styles.profile_main}>
+                        <div className={styles.profile_list}>
+                            <i className="iconfont icon-dingdan"></i>
                             <span>全部订单</span>
                         </div>
-                        <div className="profile_list">
+                        <div className={styles.profile_list}>
                             <i className="iconfont icon-qian"></i>
                             <span>待付款</span>
                         </div>
-                        <div className="profile_list">
+                        <div className={styles.profile_list}>
                             <i className="iconfont icon-daifahuo"></i>
                             <span>待发货</span>
                         </div>

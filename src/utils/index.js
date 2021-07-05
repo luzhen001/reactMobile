@@ -39,7 +39,7 @@ export function toastMsg (content, type = 'info', onClose = () => { }, duration 
  * @param {string} platform 设定组件的平台特有样式, 可选值为 android, ios， 默认为 ios
  * @return {} 对话确认框
  */
-export function modalAlert (message, confirmCallBack = () => { }, cancelCallBack = () => { },cancelText = '取消', confirmText = '确定', title = '温馨提示', platform = 'ios') {
+export function modalAlert (message, confirmCallBack = () => { }, cancelCallBack = () => { }, cancelText = '取消', confirmText = '确定', title = '温馨提示', platform = 'ios') {
     Modal.alert(
         title,
         message,
@@ -61,6 +61,7 @@ export function debounce (func, delay) {
     return function (...args) {
         if (timer)
             clearTimeout(timer);
+            timer = null;
         timer = setTimeout(() => {
             func.apply(this, args);
         }, delay);

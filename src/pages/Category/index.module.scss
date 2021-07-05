@@ -1,0 +1,35 @@
+.cate_list {
+    padding:0 10px 0;
+    margin-bottom:20px;
+    .cate_title {
+        color: #000;
+        font-size: 18px;
+        padding: 10px 0;
+        font-weight: bold;
+    }
+    .cate_content {
+        display: flex;
+        flex-wrap: wrap;
+        .cate_item {
+            display: flex;
+            flex-direction: column;
+            width: 33.3333%;
+            align-items: center;
+            margin-bottom: 13px;
+            img {
+                width: 90%;
+                display: inline-block;
+            }
+            @media screen and (max-width: 400px) {
+                img {
+                    width: 80%;
+                }
+            }
+            .cat_name {
+                color: #666;
+                font-size: 13px;
+                margin-top: 10px;
+            }
+        }
+    }
+}
