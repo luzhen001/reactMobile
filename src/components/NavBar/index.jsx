@@ -10,8 +10,8 @@ class headBar extends Component {
     }
     static propTypes = {
         isBack: PropTypes.bool,
-        title: PropTypes.string,
         isRight: PropTypes.bool,
+        title: PropTypes.string,
         handleNavLeftClick: PropTypes.func,
         handleNavRightClick: PropTypes.func
     }

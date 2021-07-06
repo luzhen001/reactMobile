@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Icon, SearchBar } from 'antd-mobile';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import styles from './index.module.scss';
 class NavSearch extends Component {
     static defaultProps = {

@@ -3,6 +3,9 @@ import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import AuthRoute from 'components/AuthRoute'
 import Loading from 'components/Loading'
 
+import store from './redux/store'
+
+
 const Home = lazy(() => import('pages/Home'))
 const SearchGoods = lazy(() => import('pages/SearchGoods'))
 const SearchField = lazy(() => import('pages/SearchField'))
@@ -15,9 +18,24 @@ const Test = lazy(() => import('pages/Test'))
 const NotFound = lazy(() => import('pages/NotFound'))
 
 class App extends Component {
+    state = {
+        isShowLoading:false
+    }
+    componentDidMount () {
+        store.subscribe(() => {
+            let storeState = store.getState().pageLoading.isLoading
+            this.setState({
+                isShowLoading: storeState
+            })
+        })
+    }
     render () {
+        const {isShowLoading} = this.state;
         return (
             <Fragment>
+                {
+                    isShowLoading?<Loading />:''
+                }
                 <Suspense fallback={<Loading />}>
                     <Router>
                         <Switch>

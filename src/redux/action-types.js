@@ -1,6 +1,12 @@
 /**
  *包含所有action的type名称常量
  */
+//打开关闭页面loading
+export const OPEN_LOADING = 'open_loading';
+export const CLOSE_LOADING = 'close_loading';
+
+
+
 //数量增加减少
 export const INCREMENT = 'increment';
 export const DECREMENT = 'decrement';

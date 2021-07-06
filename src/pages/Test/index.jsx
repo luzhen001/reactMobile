@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import {debounce} from 'utils'
 class UnDebounce extends Component {
     constructor(props) {
         super(props);

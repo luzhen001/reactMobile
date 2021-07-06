@@ -1,15 +1,37 @@
 import axios from 'axios'
-import {toastMsg} from '../utils/index'
+import store from '../redux/store'
+import { OPEN_LOADING, CLOSE_LOADING } from '../redux/action-types'
+import { toastMsg } from '../utils/index'
 // const baseUrl = 'https://api-hmugo-web.itheima.net'
 const instance = axios.create({
     //baseURL: `${baseUrl}/`,
     withCredentials: true,
     timeout: 1000 //超时时间
 })
+
+//全局loading计数
+let needLoadingRequestCount = 0;
+function showFullScreenLoading () {
+    if (needLoadingRequestCount === 0) {
+        store.dispatch({ type: OPEN_LOADING });
+    }
+    needLoadingRequestCount++;
+}
+function hideFullScreenLoading () {
+    if (needLoadingRequestCount <= 0) return;
+    needLoadingRequestCount--;
+    if (needLoadingRequestCount === 0) {
+        store.dispatch({ type: CLOSE_LOADING });
+    }
+}
+
+
+
+
 instance.interceptors.request.use(
     config => {
         let token = localStorage.getItem('token');
-        if(token){
+        if (token) {
             config.headers['keyType'] = 'app';
             config.headers['accessKey'] = '50dbcea269d34f38b7d91ab0cb6b1eb3';
             config.headers['secretKey'] = '50dbcea269d34f38b7d91ab0cb6b1eb3';
@@ -18,15 +40,18 @@ instance.interceptors.request.use(
             config.headers['Access-Control-Allow-Methods'] = '*';
             config.headers['Access-Control-Allow-Headers'] = 'X-Requested-With,Content-Type';
         }
+        showFullScreenLoading();
         return config;
     },
     error => {
+        hideFullScreenLoading();
         return Promise.reject(error);
     }
 )
 instance.interceptors.response.use(
     response => {
         const res = response.data;
+        hideFullScreenLoading();
         if (res.meta.status !== 200) {
             return Promise.reject(new Error(res.message || 'Error'));
         } else {
@@ -89,7 +114,8 @@ instance.interceptors.response.use(
                 error.message = '连接服务器失败！';
             }
         }
-        toastMsg(error.message || 'Error','fail');
+        hideFullScreenLoading();
+        toastMsg(error.message || 'Error', 'fail');
         return Promise.reject(error);
     }
 )

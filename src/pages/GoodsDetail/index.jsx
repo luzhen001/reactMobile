@@ -41,7 +41,6 @@ class GoodsDetail extends Component {
     }
     render () {
         const { swiperList, goods_name, goods_price, hot_mumber,goods_introduce } = this.state;
-        console.log(goods_introduce);
         return (
             <Fragment>
                 <NavBar title="商品详情"></NavBar>

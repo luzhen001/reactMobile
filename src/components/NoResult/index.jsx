@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './index.module.scss';
-import imgUlr from './no-result@2x.png'
+import imgUlr from './empty.png';
 export default class NoResult extends Component {
     static defaultProps = {
         isShowImg: true,
-        resultText: '暂无任何数据哦~'
+        text: '暂无任何数据哦~~~'
     }
     static propTypes = {
         isShowImg: PropTypes.bool,
-        resultText: PropTypes.string
+        text: PropTypes.string
     }
     render () {
+        const { isShowImg, text } = this.props;
         return (
             <div className={styles.no_result}>
-                {this.props.isShowImg ? <img src={imgUlr} alt="" />: ''}
-                <div className={styles.text}>{this.props.resultText}</div>
+                {isShowImg ? <img src={imgUlr} alt="" /> : ''}
+                <span>{text}</span>
             </div>
         )
     }
