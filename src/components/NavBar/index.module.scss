@@ -1,13 +1,16 @@
 .nav_wrap {
     height: 45px;
-    :global(.am-navbar-left){
+    :global(.am-navbar-left) {
         padding-left: 5px;
-        :global(.am-icon-md){
+        :global(.am-icon-md) {
             width: 28px;
             height: 28px;
         }
     }
     :global(.am-navbar-title) {
         font-size: 15px;
+    }
+    :global(.iconfont) {
+        font-size: 22px;
     }
 }

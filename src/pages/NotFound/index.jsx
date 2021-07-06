@@ -1,9 +1,9 @@
-import React from 'react'
-import {Button} from 'antd-mobile'
-import styles from './index.module.scss'
-import errorImg from '../../assets/images/404.png'
-export default class NotFound extends React.Component {
-    handleBack = (backType) => {
+import React, { Component } from 'react';
+import { Button } from 'antd-mobile';
+import errorImg from './404.png';
+import styles from './index.module.scss';
+export default class NotFound extends Component {
+    handleAction = (backType) => {
         return () => {
             if (backType === "backIndex") {
                 this.props.history.push("/");
@@ -17,12 +17,11 @@ export default class NotFound extends React.Component {
     render () {
         return (
             <div className={styles.error_wrap}>
-                <img src={errorImg} alt="" />
+                <img src={errorImg} alt="404" />
                 <h3>哎呀，非常抱歉页面被狗狗叼走啦～～～</h3>
-                <p>请点击以下链接继续浏览网页</p>
                 <div className={styles.error_btn}>
-                    <Button type="ghost" icon="check-circle-o" onClick={this.handleBack("backIndex")}>返回首页</Button>
-                    <Button type="ghost" icon="left" onClick={this.handleBack("backPrev")}>返回上一页</Button>
+                    <Button type="ghost" icon="check-circle-o" onClick={this.handleAction("backIndex")}>返回首页</Button>
+                    <Button type="ghost" icon="left" onClick={this.handleAction("backPrev")}>返回上一页</Button>
                 </div>
             </div>
         )

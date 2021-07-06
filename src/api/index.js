@@ -7,6 +7,8 @@ export const reqLogin = () => {
     return ajaxRequest.get(`/api/login`);
 }
 
+
+
 // 获取首页商品列表数据
 export const getHomeGoodslist = () => ajaxRequest.get('/api/home/goodslist')
 // 获取分类

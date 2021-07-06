@@ -6,7 +6,7 @@ import { toastMsg } from '../utils/index'
 const instance = axios.create({
     //baseURL: `${baseUrl}/`,
     withCredentials: true,
-    timeout: 1000 //超时时间
+    timeout: 30000 //超时时间
 })
 
 //全局loading计数
@@ -24,9 +24,6 @@ function hideFullScreenLoading () {
         store.dispatch({ type: CLOSE_LOADING });
     }
 }
-
-
-
 
 instance.interceptors.request.use(
     config => {

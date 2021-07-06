@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "12298057",
+      "name": "订单",
+      "font_class": "dingdan1",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "215022",
+      "name": "登录",
+      "font_class": "denglu",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "10547468",
+      "name": "注册",
+      "font_class": "zhuce",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
       "icon_id": "1918695",
       "name": "反馈",
       "font_class": "fankui",
@@ -39,13 +60,6 @@
       "font_class": "buganxingqu",
       "unicode": "e673",
       "unicode_decimal": 58995
-    },
-    {
-      "icon_id": "3977505",
-      "name": "订单",
-      "font_class": "dingdan",
-      "unicode": "e653",
-      "unicode_decimal": 58963
     },
     {
       "icon_id": "6469976",

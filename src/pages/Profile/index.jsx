@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { List,} from 'antd-mobile';
+import { List } from 'antd-mobile';
+import styles from './index.module.scss';
 import personBg from 'assets/images/profile_bg.png';
 import personLogo from 'assets/images/profile_logo.png';
-import styles from './index.module.scss';
 class Profile extends Component {
+    handleLogin = () => {
+        this.props.history.push('/login');
+    }
     render() {
         const isLogin = localStorage.getItem("username");
         return (
@@ -15,7 +18,7 @@ class Profile extends Component {
                             isLogin?
                             <p>用户名</p>
                             :
-                            <p>还没有登录</p>
+                            <p onClick={this.handleLogin}>你还没有登录,赶紧去登录吧~~~</p>
                         }
                     </div>
                 </div>
@@ -25,7 +28,7 @@ class Profile extends Component {
                     </List>
                     <div className={styles.profile_main}>
                         <div className={styles.profile_list}>
-                            <i className="iconfont icon-dingdan"></i>
+                            <i className="iconfont icon-dingdan1"></i>
                             <span>全部订单</span>
                         </div>
                         <div className={styles.profile_list}>

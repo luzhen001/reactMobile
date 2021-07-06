@@ -36,7 +36,7 @@ class App extends Component {
                 {
                     isShowLoading?<Loading />:''
                 }
-                <Suspense fallback={<Loading />}>
+                <Suspense fallback={<></>}>
                     <Router>
                         <Switch>
                             <Route path="/" exact render={() => <Redirect to="/home" />}></Route>

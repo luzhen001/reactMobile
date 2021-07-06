@@ -6,14 +6,16 @@ import styles from './index.module.scss';
 class headBar extends Component {
     static defaultProps = {
         isBack: true,
-        isRight: false
+        isRight: false,
+        rightIcon: 'gongneng'
     }
     static propTypes = {
         isBack: PropTypes.bool,
         isRight: PropTypes.bool,
         title: PropTypes.string,
+        rightIcon: PropTypes.string,
         handleNavLeftClick: PropTypes.func,
-        handleNavRightClick: PropTypes.func
+        handleNavRightClick: PropTypes.func.isRequired
     }
     handleDefaultBack = () => {
         const { isBack } = this.props;
@@ -28,7 +30,7 @@ class headBar extends Component {
         }
     }
     render () {
-        const { isBack, title, isRight, handleNavLeftClick } = this.props;
+        const { isBack, isRight, title, rightIcon, handleNavLeftClick } = this.props;
         return (
             <div className={styles.nav_wrap}>
                 <NavBar
@@ -36,7 +38,7 @@ class headBar extends Component {
                     icon={isBack ? <Icon type="left" /> : null}
                     onLeftClick={handleNavLeftClick || this.handleDefaultBack}
                     rightContent=
-                    {isRight ? <Icon key="1" type="ellipsis" onClick={this.handleRightClick} /> : null}
+                    {isRight ? <i className={"iconfont " + `${rightIcon}`} key={rightIcon} onClick={this.handleRightClick} /> : null}
                 >
                     {title}
                 </NavBar>

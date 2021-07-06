@@ -1,28 +1,23 @@
 .error_wrap{
     width: 100%;
     height: 100%;
-    padding: 0 30px;
+    padding: 0 30px 100px;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
     img{
-        width: 90%;
+        width: 100%;
     }
     h3{
         color: #333;
         font-size: 18px;
         margin-top: 50px;
     }
-    p{
-        color: #999;
-        font-size: 15px;
-        margin-top: 30px;
-    }
     .error_btn{
         width: 100%;
         display: flex;
-        margin-top: 30px;
+        margin-top: 50px;
         justify-content: space-between;
         a{
             width: 40%;
